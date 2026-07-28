@@ -1,0 +1,25 @@
+* {
+    font-family: "Mx437 IBM VGA 8x16", "Siji", "Iosevka Term Regular";
+    font-size: 12px;
+    margin: 0 1px;
+}
+
+window#waybar {
+    background-color: #000000;
+    color: #DCD6D6;
+}
+
+#workspaces button {
+    padding: 0 1px;
+    color: #DCD6D6;
+}
+
+#workspaces button.focused {
+    background-color: transparent;
+    border-bottom: none;
+}
+
+#clock, #memory, #cpu, #battery, #backlight, #pulseaudio, #network, #window {
+    padding: 0 6px;
+}
+
