@@ -8,12 +8,12 @@ My Personal Dotfiles for SwayWM
 The Sway Config does have some code related to gentoo and it is safe to remove and replace those line!
 
 # Packages/Tools Included & Required
-- [Alacritty](https://github.com/alacritty/alacritty)
-- [Btop++](https://github.com/aristocratos/btop)
-- [gtk.30](https://github.com/gooroom/gtk3)
-- [j4-dmenu-desktop](https://github.com/enkore/j4-dmenu-desktop)
-- [SwayWm](https://github.com/swaywm/sway)
-- [SwayBg](https://github.com/swaywm/swaybg)
-- [Waybar](https://github.com/Alexays/Waybar)
+- [Alacritty](https://github.com/alacritty/alacritty) - Gpu Accelerated Terminal
+- [Btop++](https://github.com/aristocratos/btop) - System Monitor
+- [gtk.30](https://github.com/gooroom/gtk3) - Global Color Schemes
+- [j4-dmenu-desktop](https://github.com/enkore/j4-dmenu-desktop) - Faster Fork Of Dmenu
+- [SwayWm](https://github.com/swaywm/sway) - I3 Compatible WM
+- [SwayBg](https://github.com/swaywm/swaybg) - Wallpaper Manager
+- [Waybar](https://github.com/Alexays/Waybar) - Wayland Status Bar
 
 # Installation 
