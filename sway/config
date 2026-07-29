@@ -6,7 +6,7 @@ font pango:monospace 8
 # Autostart
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK
 exec gentoo-pipewire-launcher
-exec waybar
+exec --no-startup-id waybar
 exec dunst
 exec swayidle -w \
  timeout 300 'swaylock -f -c 000000' \
