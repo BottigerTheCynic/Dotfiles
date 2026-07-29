@@ -1,54 +1,47 @@
 {
-    "layer": "top",
-    "position": "bottom",
-    "height": 18,
-    "margin-top": 0,
-    "modules-left": ["sway/workspaces", "sway/window"],
-    "modules-center": ["clock"],
-    "modules-right": ["disk", "pulseaudio", "battery", "memory", "cpu"],
+"layer": "top",
+"position": "bottom",
+"height": 18,
+"margin-top": 0,
+"modules-left": ["sway/workspaces", "sway/window"],
+"modules-center": ["clock"],
+"modules-right": ["disk", "pulseaudio", "battery", "memory", "cpu"],
 
-    "sway/workspaces": {
-        "disable-scroll": false,
-        "format": "{index}"
-    },
-    "sway/window": {
-        "max-length": 50
-    },
-    "clock": {
-        "interval": 1,
-        "format": "{:%I:%M %p}",
-        "format-alt": "{:%F}"
-    },
-    "memory": {
-        "interval": 1,
-        "format": "MEM: {percentage}%"
-    },
-    "cpu": {
-        "interval": 1,
-        "format": "CPU: {usage}%"
-    },
-    "battery": {
-        "bat": "BAT0",
-        "adapter": "AC",
-        "format": "BATT: {capacity}%",
-        "format-charging": "CHG {capacity}%",
-        "format-full": "BATT: Full",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "pulseaudio": {
-        "format": "VOL {volume}%",
-        "format-muted": " muted",
-        "format-icons": {
-            "default": ["", "", ""]
-        }
-    },
-    
-    "disk": {
-       "path": "/",
-       "format-alt": "{used} / {total}" , 
-       "format": "/ {percentage_used}%",
-       }
-    },    
-}
-
-
+"sway/workspaces": {
+  "disable-scroll": false,
+  "format": "{index}"
+},
+"sway/window": {
+  "max-length": 50
+},
+"clock": {
+  "interval": 1,
+  "format": "{:%I:%M %p}",
+  "format-alt": "{:%F}"
+},
+"memory": {
+  "interval": 1,
+  "format": "MEM: {percentage}%"
+},
+"cpu": {
+  "interval": 1,
+  "format": "CPU: {usage}%"
+},
+"battery": {
+  "bat": "BAT0",
+  "adapter": "AC",
+  "format": "BATT: {capacity}%",
+  "format-charging": "CHG {capacity}%",
+  "format-full": "BATT: Full",
+  "format-icons": ["", "", "", "", ""]
+},
+"pulseaudio": {
+  "format": "VOL {volume}%",
+  "format-muted": " muted",
+  "format-icons": {
+    "default": ["", "", ""]
+  }
+},
+"disk": {
+  "path": "/",
+  "format-alt": "{used} / {total}",
