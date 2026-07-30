@@ -5,7 +5,7 @@
 "margin-top": 0,
 "modules-left": ["sway/workspaces", "sway/window"],
 "modules-center": ["clock"],
-"modules-right": ["disk", "pulseaudio", "battery", "memory", "cpu"],
+"modules-right": ["tray", "disk", "pulseaudio", "battery", "memory", "cpu"],
 
 "sway/workspaces": {
   "disable-scroll": false,
@@ -42,6 +42,13 @@
     "default": ["", "", ""]
   }
 },
+"tray": {
+    "icon-size": 16,
+    "spacing": 8
+},
 "disk": {
   "path": "/",
   "format-alt": "{used} / {total}",
+  "format": "/ {percentage_used}%"
+}
+}
