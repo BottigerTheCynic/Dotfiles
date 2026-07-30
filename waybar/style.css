@@ -19,7 +19,18 @@ window#waybar {
     border-bottom: none;
 }
 
-#clock, #memory, #cpu, #battery, #backlight, #pulseaudio, #network, #window {
+#tray {
     padding: 0 6px;
 }
 
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #386CBB;
+}
+#clock, #memory, #cpu, #battery, #pulseaudio, #window #disk, #tray {
+    padding: 0 6px;
+}
