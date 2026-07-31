@@ -15,7 +15,7 @@ My Sway Config does have some Gentoo related code and it is safe to remove and r
 - [SwayWm](https://github.com/swaywm/sway) - I3 Compatible WM
 - [SwayBg](https://github.com/swaywm/swaybg) - Wallpaper Manager
 - [Waybar](https://github.com/Alexays/Waybar) - Wayland Status Bar
-- [Dunst](https://github.com/dunst-project/dunst)
+- [Dunst](https://github.com/dunst-project/dunst) - Notification daemon
 
 # Installation 
 `git clone https://github.com/BottigerTheCynic/dotfiles.git ~/dotfiles
