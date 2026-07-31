@@ -1,49 +1,47 @@
-set $mod Mod4
-set $term alacritty
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
 
-font pango:monospace 8
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# Autostart
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK
-exec gentoo-pipewire-launcher
-exec --no-startup-id dunst
-exec ~/.config/sway/scripts/battery-notify.sh
-exec swayidle -w \
-  timeout 300 'swaylock -f -c 000000' \
-  before-sleep 'swaylock -f -c 000000'
-exec_always swaybg -i ~/Pictures/lain2.jpg -m fill
+# Reload / restart / exit
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exit
 
-# Drag Windows
-floating_modifier $mod normal
+# Resize mode
+mode "resize" {
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym semicolon resize grow width 10 px or 10 ppt
 
-# Gaps / borders
-gaps inner 6
-default_border pixel 0
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow height 10 px or 10 ppt
 
-# Focus / move
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
 
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+r mode "resize"
 
-#Brightness
-bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-
-#Terminal
-bindsym $mod+Return exec $term
-
-# Pipewire
-bindsym XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
-bindsym XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
-# Kill window
-bindsym $mod+q kill
-
-#Launcher
+# Window rules
+for_window [class="^.*"] border pixel 0
+for_window [app_id="Alacritty"] floating enable
+# Screenshot
+bindsym $mod+Shift+s exec grim
+#Status bar
+bar {
+    swaybar_command waybar
+}
