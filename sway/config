@@ -1,3 +1,81 @@
+set $mod Mod4
+set $term alacritty
+
+font pango:monospace 8
+
+# Autostart
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK
+exec gentoo-pipewire-launcher
+exec --no-startup-id dunst &
+exec ~/.config/sway/scripts/battery-notify.sh
+exec swayidle -w \
+  timeout 300 'swaylock -f -c 000000' \
+  before-sleep 'swaylock -f -c 000000'
+exec_always swaybg -i ~/Pictures/lain2.jpg -m fill
+
+# Drag Windows
+floating_modifier $mod normal
+
+# Gaps / borders
+gaps inner 6
+default_border pixel 0
+
+# Focus / move
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+#Brightness
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+
+#Terminal
+bindsym $mod+Return exec $term
+
+# Pipewire
+bindsym XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+bindsym XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+# Kill window
+bindsym $mod+q kill
+
+#Launcher
+bindsym $mod+d exec j4-dmenu-desktop --dmenu "dmenu -fn 'Mx437 IBM VGA 8x16-10' -nb '#000000' -nf '#dcd6d6' -sb '#282828' -sf '#dcd6d6'"
+# Layout
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+bindsym $mod+e layout toggle split
+bindsym $mod+space floating toggle
+bindsym $mod+a focus parent
+
+# Workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
@@ -45,3 +123,4 @@ bindsym $mod+Shift+s exec grim
 bar {
     swaybar_command waybar
 }
+                               
