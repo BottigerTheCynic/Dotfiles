@@ -4,7 +4,6 @@ set $term alacritty
 font pango:monospace 8
 
 # Autostart
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK
 exec gentoo-pipewire-launcher
 exec --no-startup-id dunst &
 exec ~/.config/sway/scripts/battery-notify.sh
